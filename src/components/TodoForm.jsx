@@ -23,6 +23,7 @@ export const TodoForm = () => {
     }
 
     dispatch(addTodo(newTodoValue));
+
     setNewTodoValue("");
   };
 

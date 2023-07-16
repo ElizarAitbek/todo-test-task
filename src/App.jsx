@@ -1,13 +1,27 @@
 import { styled } from "styled-components";
 import { TodoForm } from "./components/TodoForm";
-import { TodoItem } from "./components/TodoItem";
 import { TodoList } from "./components/TodoList";
+import { useDispatch, useSelector } from "react-redux";
+import { updateFilterStatus } from "./store/reducers/todo-slice";
 
 export function App() {
+  const dispatch = useDispatch();
+  const { filterStatus } = useSelector((state) => state.todos);
+
+  const handleFilterTodos = (event) => {
+    dispatch(updateFilterStatus(event.target.value));
+  };
   return (
     <AppMain>
       <TodoWrapper>
-        <h2>Todo List</h2>
+        <HeaderSection>
+          <h2>Todo List</h2>
+          <SelectButton value={filterStatus} onChange={handleFilterTodos}>
+            <option value="all">All</option>
+            <option value="complete">Completed</option>
+            <option value="incomplete">Incompleted</option>
+          </SelectButton>
+        </HeaderSection>
         <TodoForm />
         <TodoList />
       </TodoWrapper>
@@ -27,4 +41,15 @@ const TodoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+`;
+
+const HeaderSection = styled.section`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const SelectButton = styled.select`
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 16px;
 `;

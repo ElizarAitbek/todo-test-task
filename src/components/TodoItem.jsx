@@ -8,7 +8,6 @@ export const TodoItem = ({ id, title, completed }) => {
 
   const handleCompleteTodo = () => {
     dispatch(completeTodo(id));
-    console.log(completed, id);
   };
   const handleDeleteTodo = () => {
     dispatch(deleteTodo(id));
