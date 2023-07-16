@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../store/reducers/todo-slice";
+import { addTodo } from "../../store/reducers/todo-slice";
 import { styled } from "styled-components";
 
 export const TodoForm = () => {

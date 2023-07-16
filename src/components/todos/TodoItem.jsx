@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { completeTodo, deleteTodo } from "../store/reducers/todo-slice";
+import { completeTodo, deleteTodo } from "../../store/reducers/todo-slice";
+
 import { styled } from "styled-components";
 
 export const TodoItem = ({ id, title, completed }) => {
