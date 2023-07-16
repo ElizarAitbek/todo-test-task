@@ -11,7 +11,7 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <button onClick={handleToggle}>
+    <button style={{ padding: "0 5px" }} onClick={handleToggle}>
       {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
     </button>
   );

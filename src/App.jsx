@@ -3,16 +3,19 @@ import { AppWrapper } from "./components/ui/AppWrapper";
 import { ControlsSection } from "./components/ui/ControlsSection";
 import { TodoForm } from "./components/todos/TodoForm";
 import { TodoList } from "./components/todos/TodoList";
+import { AppThemeProvider } from "./components/ui/AppThemeProvider";
 
 export function App() {
   return (
-    <AppWrapper>
-      <TodoWrapper>
-        <ControlsSection />
-        <TodoForm />
-        <TodoList />
-      </TodoWrapper>
-    </AppWrapper>
+    <AppThemeProvider>
+      <AppWrapper>
+        <TodoWrapper>
+          <ControlsSection />
+          <TodoForm />
+          <TodoList />
+        </TodoWrapper>
+      </AppWrapper>
+    </AppThemeProvider>
   );
 }
 
